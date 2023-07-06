@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="vp"
+          content="viewport-fit=cover,initial-scale=1,minimum-scale=1,maximum-scale=1,width=device-width,user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            font-size: 100px;
+        }
+
+        body {
+            /*background: rgba(242, 242, 242, 1);*/
+            /*background: red;*/
+            background: url("./img/index-bg.png") -0.47rem -0.32rem no-repeat;
+
+            background-size: 4.69rem 2.5rem;
+
+            /*background-repeat: ;*/
+
+            /*width: 469px;*/
+            /*height: 250px;*/
+
+        }
+
+        .container-full {
+            width: 3.75rem;
+            /*height:5rem;*/
+            /*background-color: gray;*/
+        }
+
+        .container {
+            width: 3.5rem;
+            /*height:5rem;*/
+            /*background-color: blue;*/
+            margin: 0 auto;
+        }
+
+        .search-tool {
+            height: 0.44rem;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .scan {
+            width: 0.26rem;
+            height: 0.26rem;
+            /*background-color: red;*/
+            margin-left: 0.12rem;
+        }
+
+        .search-box {
+            width: 2.68rem;
+            height: 0.3rem;
+            background-color: #ffffff;
+            border-radius: 0.15rem;
+            margin-left: 0.15rem;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .search-img {
+            margin-left: 0.16rem;
+            width: 0.17rem;
+            height: 0.17rem;
+            margin-top: 0.06rem;
+        }
+
+        .search-input {
+            /*border: 1px solid red;*/
+            width: 2rem;
+            height: 0.2rem;
+            margin-top: 0.06rem;
+            margin-left: 0.11rem;
+            border: 0;
+        }
+
+        .message {
+            width: 0.20rem;
+            height: 0.20rem;
+            /*background-color: red;*/
+            margin-left: 0.16rem;
+        }
+
+        .type {
+            height: 0.34rem;
+            /*border: 1px solid black;*/
+            margin-top: 0.1rem;
+
+
+
+            position: relative;
+
+        }
+
+        .type .ts{
+            display: flex;
+            flex-direction: row;
+            /*justify-content: center;*/
+            align-items: center;
+
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+        }
+
+        .type .ts span {
+            width: 0.56rem;
+            height: 0.34rem;
+
+            font-size: 0.14rem;
+            color: #ffffff;
+            margin-right: 0.1rem;
+
+            flex-shrink: 0;
+        }
+
+        .type .ts span:first-child{
+            border-bottom: 1px solid ;
+        }
+
+        .type .all-type{
+            width: 0.59rem;
+            height: 0.24rem;
+
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: rgba(250, 78, 64, 1);
+
+            /*background-color: blue;*/
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .type .all-type .all-type-img {
+            width: 0.2rem;
+            height: 0.14rem;
+            margin: 0.05rem;
+        }
+        .type .all-type .all-type-name{
+            color: rgba(255, 255, 255, 1);
+            font-size: 0.14rem;
+            line-height: 0.24rem;
+        }
+
+
+        .carousel {
+            height: 1.6rem;
+            margin-top: 0.14rem;
+            /*background-color: blue;*/
+        }
+
+        .carousel img {
+            width: 3.5rem;
+            height: 1.6rem;
+        }
+
+        .guarantee {
+            height: 0.16rem;
+            /*background-color: blue;*/
+            margin-top: 0.12rem;
+            font-size: 0.1rem;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .guarantee .box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .guarantee .box .logo {
+            width: 0.16rem;
+            height: 0.16rem;
+            border: 0.01rem solid rgba(252, 90, 90, 1);
+
+            border-radius: 50%;
+            background-color: #fff;
+
+            text-align: center;
+            line-height: 0.16rem;
+
+            color: rgba(252, 90, 90, 1);
+
+        }
+
+        .guarantee .box .text {
+
+            text-align: center;
+            line-height: 0.16rem;
+
+            margin-left: 0.04rem;
+
+            color: rgba(252, 90, 90, 1);
+
+        }
+
+        .jin_gang{
+            height: 0.67rem;
+
+            /*background-color: blue;*/
+            margin-top: 0.15rem;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .jin_gang .box{
+            width: 0.48rem;
+            height: 0.67rem;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .jin_gang .box img{
+            width: 0.48rem;
+            height: 0.48rem;
+        }
+
+        .jin_gang .box span{
+            /*margin-top: ;*/
+            width: 0.48rem;
+            height: 0.17rem;
+
+            font-size: 0.12rem;
+            text-align: center;
+            line-height: 0.17rem;
+        }
+        .new_user{
+            height: 1.24rem;
+        }
+
+        .new_user img{
+            width: 3.75rem;
+            height: 1.24rem;
+        }
+
+        .china{
+            margin-top: 0.14rem;
+            height: 2.04rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .china .left{
+            width: 1.72rem;
+            height: 2.04rem;
+        }
+
+        .china .left img{
+            width: 1.72rem;
+            height: 2.04rem;
+        }
+
+        .china .right{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .china .right .top, .china .right .bottom{
+            width: 1.72rem;
+            height: 0.98rem
+        }
+
+
+
+        .china .right img{
+            width: 1.72rem;
+            height: 0.98rem
+        }
+
+        .good_goods{
+            margin-top: 0.19rem;
+        }
+        .good_goods .title{
+            height: 0.34rem;
+            font-size: 0.24rem;
+            line-height: 0.34rem;
+        }
+
+        .good_goods .box{
+            height: 3.46rem;
+            width: 3.5rem;
+            margin-top: 0.14rem;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 0.05rem;
+        }
+
+        .good_goods .box .box-img{
+            height: 1.6rem;
+            width: 3.5rem;
+        }
+
+        .good_goods .box .box-img img{
+            width: 3.5rem;
+            height: 1.6rem;
+            border-radius: 0.05rem;
+        }
+        .good_goods .box .box-goods{
+            height: 1.7rem;
+            width: 3.5rem;
+
+            display: flex;
+            flex-direction: row;
+
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .good_goods .box .box-goods .goods{
+            height: 1.68rem;
+            width: 1.03rem;
+
+            margin-left: 0.09rem;
+
+            display: flex;
+            flex-direction: column;
+        }
+        .good_goods .box .box-goods .goods .goods_img{
+            width: 1.03rem;
+            height: 1.03rem;
+        }
+
+        .good_goods .box .box-goods .goods .goods_name {
+            font-size: 0.12rem;
+            margin-left: 0.1rem;
+            margin-top: 0.05rem;
+            width: 0.93rem;
+        }
+
+        .good_goods .box .box-goods .goods .goods_prices {
+
+            margin-left: 0.1rem;
+            margin-top: 0.05rem;
+            width: 0.93rem;
+            height: 0.2rem;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .good_goods .box .box-goods .goods .goods_prices .goods_price{
+            font-size: 0.14rem;
+            line-height: 0.2rem;
+            color: rgba(248, 61, 61, 1);
+        }
+
+        .good_goods .box .box-goods .goods .goods_prices .goods_old_price{
+            font-size: 0.1rem;
+            line-height: 0.2rem;
+            margin-left: 0.04rem;
+            color: rgba(153, 153, 153, 1);
+            text-decoration: line-through;
+        }
+
+        .tool-bar{
+            height: 0.83rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 1);
+
+            position: fixed;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        .tool-bar .bar{
+            width: 0.3rem;
+            height: 0.42rem;
+
+            margin-top: 0.1rem;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-bar .bar .bar-img{
+            width: 0.18rem;
+            height:0.18rem;
+            margin: 0.05rem;
+
+        }
+
+        .tool-bar .bar .bar-name{
+            width: 0.4rem;
+            height: 0.14rem;
+            line-height: 0.14rem;
+            font-size: 0.1rem;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container-full search-tool">
+    <img class="scan" src="./img/scan.png" alt="">
+    <div class="search-box">
+        <img src="img/search.png" class="search-img" alt="">
+        <input type="text" class="search-input" placeholder="万千商品，等你来购">
+    </div>
+    <img
+            class="message" alt="" src="img/message.png">
+</div>
+
+<div class="container type">
+
+    <div class="ts">
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+        <span>为你推荐</span>
+    </div>
+
+
+    <div class="all-type">
+        <img class="all-type-img" src="img/all-type.png" alt="">
+        <span class="all-type-name" >分类</span>
+    </div>
+</div>
+
+<div class="container carousel">
+    <img src="./img/622ff6012d3b1b6b00ec810d.jpg" alt="">
+</div>
+
+<div class="container guarantee">
+    <div class="box">
+        <div class="logo">正</div>
+        <div class="text">100%正品保障</div>
+    </div>
+    <div class="box">
+        <div class="logo">陪</div>
+        <div class="text">假一赔十</div>
+    </div>
+    <div class="box">
+        <div class="logo">售</div>
+        <div class="text">24小时安心售后</div>
+    </div>
+</div>
+<!--    金刚区-->
+<div class="container jin_gang">
+    <div class="box">
+        <img src="./img/jin_gang_1.png" alt="">
+        <span>海外购</span>
+    </div>
+    <div class="box">
+        <img src="./img/jin_gang_2.png" alt="">
+        <span>海外购</span>
+    </div>
+    <div class="box">
+        <img src="./img/jin_gang_3.png" alt="">
+        <span>海外购</span>
+    </div>
+    <div class="box">
+        <img src="./img/jin_gang_4.png" alt="">
+        <span>海外购</span>
+    </div>
+    <div class="box">
+        <img src="./img/jin_gang_5.png" alt="">
+        <span>海外购</span>
+    </div>
+</div>
+
+<!--新人专项-->
+<div class="container-full new_user">
+    <img src="./img/622ff60f2d3b1b4f91ec828d.png" alt="">
+</div>
+
+<!--瓷片区-->
+
+<div class="container china">
+    <div class="left">
+        <img src="img/622ff60727d2c8e913de1a2f.png" alt="">
+    </div>
+    <div class="right">
+        <div class="top">
+            <img src="img/622ff608759cb0df400e16f2.png" alt="">
+        </div>
+        <div class="bottom">
+            <img src="img/622ff609759cb03c970e170b.png" alt="">
+        </div>
+    </div>
+
+</div>
+
+<!--好物精选-->
+
+<div class="container good_goods">
+    <div class="title">好物精选</div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="./img/622ff6052d3b1b6073ec8170.jpg" alt="">
+        </div>
+        <div class="box-goods">
+
+            <div class="goods">
+                <img src="img/622ff6022d3b1b18aaec8120.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="./img/622ff6052d3b1b6073ec8170.jpg" alt="">
+        </div>
+        <div class="box-goods">
+
+            <div class="goods">
+                <img src="img/622ff6022d3b1b18aaec8120.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="./img/622ff6052d3b1b6073ec8170.jpg" alt="">
+        </div>
+        <div class="box-goods">
+
+            <div class="goods">
+                <img src="img/622ff6022d3b1b18aaec8120.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="./img/622ff6052d3b1b6073ec8170.jpg" alt="">
+        </div>
+        <div class="box-goods">
+
+            <div class="goods">
+                <img src="img/622ff6022d3b1b18aaec8120.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+            <div class="goods">
+                <img src="img/622ff602f7f4d2df6c04205e.jpg" class="goods_img" alt="">
+                <span class="goods_name">韩国可么多么宽口硅胶奶瓶...</span>
+                <div class="goods_prices">
+                    <span class="goods_price">￥289</span>
+                    <span class="goods_old_price">￥500</span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="container-full tool-bar">
+    <div class="bar">
+        <img class="bar-img" src="img/index.png" alt="">
+        <div class="bar-name">首页</div>
+    </div>
+    <div class="bar">
+        <img class="bar-img" src="img/type.png" alt="">
+        <div class="bar-name">分类</div>
+    </div>
+    <div class="bar">
+        <img class="bar-img" src="img/goods_car.png" alt="">
+        <div class="bar-name">购物车</div>
+    </div>
+    <div class="bar">
+        <img class="bar-img" src="img/my.png" alt="">
+        <div class="bar-name">我的</div>
+    </div>
+</div>
+
+
+<script>
+    window.onload = function () {
+        let deviceWidth = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = deviceWidth / 3.75 + 'px';
+    }
+</script>
+
+</body>
+</html>
